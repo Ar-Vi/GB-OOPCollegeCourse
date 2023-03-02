@@ -21,6 +21,16 @@ namespace GBConsoleProject
             string[] inventory = { "Banan", "FruitHere", "Computer" };
             double[] prices = { 12.0, 1.97, 390.99 };
 
+            Item[] list = { new Item("banana", 12.0), new Item("fruitHere", 1.97), new Item("Computer", 390.99) };
+
+
+            foreach (var item in list)
+            {
+                // iterables
+                Console.WriteLine(item);
+
+            }
+
             Console.WriteLine("Enter Thy Name:");
 
             userName = Console.ReadLine();

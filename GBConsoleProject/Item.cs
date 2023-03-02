@@ -12,9 +12,15 @@ namespace GBConsoleProject
         private string dec;
         private double price;
 
+        public Item(string dec, double price)
+        {
+            this.dec = dec;
+            this.price = price;
+        }
+
         public override string ToString()
         {
-            return $"Dec : {dec} , Price {price}";
+            return $"Dec : {dec} , Price :  {price}";
         }
     }
 }
