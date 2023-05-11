@@ -8,6 +8,7 @@ namespace GBConsoleProject
 * Author: Arya Vishnu
 * Purpose: Practice of core programming concepts and manipulation of 2-D lists
 * Description: Gather movie reviews and utilise the data in different ways
+* ARYA USE dotnet run IN UR TERMINAL - past arya
 */
         static void Vishnu_displayArray(int[,] ratingTable)
         {
