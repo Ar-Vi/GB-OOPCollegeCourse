@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace GBConsoleProject
 {
@@ -15,38 +16,25 @@ namespace GBConsoleProject
         }
         public static void Main(string[] args)
         {
-            double wallet;
-            string userName;
+            var employeeDB = new ArrayList();
             string choice = "start";
-            string[] inventory = { "Banan", "FruitHere", "Computer" };
-            double[] prices = { 12.0, 1.97, 390.99 };
+            
 
-            Item[] list = { new Item("banana", 12.0), new Item("fruitHere", 1.97), new Item("Computer", 390.99) };
+            
 
+           
 
-            foreach (var item in list)
+            
+
+            while(choice!="4")
             {
-                // iterables
-                Console.WriteLine(item);
-
-            }
-
-            Console.WriteLine("Enter Thy Name:");
-
-            userName = Console.ReadLine();
-            Console.WriteLine("How much money you got?");
-            wallet = Convert.ToDouble(Console.ReadLine());
-
-            while(choice!="e" && choice != "E")
-            {
-                Console.WriteLine("\nWhat may I do for you, " + userName + "?\n[1] Look at Inventory\n[2] Place Order in Cart\n[3] Checkout\n[E] Exit Program :(");
+                Console.WriteLine("MENU\n==================\n[1] Add Employee\n[2] Generate Payroll\n[3] Find an Employee's information\n[4] Exit Program :(");
                 choice = Console.ReadLine();
 
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("OK, here's the Goods");
-                        inventoryParse(inventory, prices);
+                     
                         break;
                     case "2":
                         // code block
@@ -54,8 +42,8 @@ namespace GBConsoleProject
                     case "3":
                         // code block
                         break;
-                    case "E":
-                        Console.WriteLine("Bye bye " + userName + ", hope you exist tmrw too");
+                    case "4":
+                        Console.WriteLine("Cya!");
                         break;
 
                     default:
