@@ -5,15 +5,6 @@ namespace GBConsoleProject
 {
     class Program
     {
-        static void inventoryParse(string[] items, double[] prices)
-        {
-            int len = items.Length;
-   
-            for (int i = 0; i < len; i++)
-            {
-                Console.WriteLine(items[i] + ", $" + Convert.ToString(prices[i]));
-            }
-        }
         public static void Main(string[] args)
         {
             var employeeDB = new ArrayList();
@@ -72,10 +63,30 @@ namespace GBConsoleProject
                         Console.WriteLine("Employee Added!");
                         break;
                     case "2":
-                        // code block
+                        //Iterate through arrayList and display 
+                        //emp IDs and respective monthly salary
+                        Console.Write("==========\nEMP ID  |  MONTHLY SALARY\n-----------");
+                        double monthlyTotal = 0.0;
+                        foreach (Employee emp in employeeDB){
+                            double empMonthlySal = emp.getAnnualSalary()/12.0;
+                            monthlyTotal += empMonthlySal;
+                            Console.Write(emp.getID().ToString() + " " + empMonthlySal.ToString());
+                        }
+                        
+                        Console.Write("MONTHLY TOTAL: " + monthlyTotal.ToString());
                         break;
                     case "3":
-                        // code block
+                        Console.Write("Employee ID to Find: ");
+                        Int32 empIDToFind = Int32.Parse(Console.ReadLine());
+                        String empInfo = "Could not find Employee with this ID";
+                        foreach (Employee emp in employeeDB){
+                            if(empIDToFind == emp.getID()){
+                                empInfo = emp.ToString();
+                                break;
+                            }
+                        }
+                        Console.Write(empInfo);
+
                         break;
                     case "4":
                         Console.WriteLine("Cya!");
@@ -86,11 +97,6 @@ namespace GBConsoleProject
                         break;
                 }
             }
-
-
-
-           
-
         }
     }
 }

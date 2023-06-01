@@ -37,5 +37,20 @@ namespace GBConsoleProject
         {
             return $"{empFirstName} {empLastName}, #{empID}\n Salary :  {empAnnualSalary}\n{empResidence.ToString()}";
         }
+        public Int32 getID(){
+            return this.empID;
+        }
+        public String getFirstName(){
+            return this.empFirstName;
+        }
+        public String getLastName(){
+            return this.empLastName;
+        }
+        public Int32 getAnnualSalary(){
+            return this.empAnnualSalary;
+        }
+        public String getResidence(){
+            return this.empResidence.ToString();
+        }
     }
 }
