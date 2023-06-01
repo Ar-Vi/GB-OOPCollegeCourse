@@ -16,21 +16,21 @@ namespace GBConsoleProject
         private Residence empResidence;
     
 
-        public Employee(Int32 eID, String eFN, String eLN, Int32 eAS, Residence eR)
+        public Employee(Int32 eID, String eFN, String eLN, Int32 eAS, String sN, String cN, String zC, String p, String c)
         {
             this.empID = eID;
             this.empFirstName = eFN;
             this.empLastName = eLN;
             this.empAnnualSalary = eAS;
-            this.empResidence = eR;
+            this.empResidence = new Residence(sN, cN, zC, p, c);
         }
-        public Employee(Int32 eID, String eFN, String eLN, Residence eR)
+        public Employee(Int32 eID, String eFN, String eLN, String sN, String cN, String zC, String p, String c)
         {
             this.empID = eID;
             this.empFirstName = eFN;
             this.empLastName = eLN;
             this.empAnnualSalary = 60000;
-            this.empResidence = eR;
+            this.empResidence = new Residence(sN, cN, zC, p, c);
         }
 
         public override string ToString()
