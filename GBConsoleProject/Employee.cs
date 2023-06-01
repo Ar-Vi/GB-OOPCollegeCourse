@@ -24,6 +24,8 @@ namespace GBConsoleProject
             this.empAnnualSalary = eAS;
             this.empResidence = new Residence(sN, cN, zC, p, c);
         }
+
+        //Basic Emp Constructor 
         public Employee(Int32 eID, String eFN, String eLN, String sN, String cN, String zC, String p, String c)
         {
             this.empID = eID;
@@ -35,8 +37,10 @@ namespace GBConsoleProject
 
         public override string ToString()
         {
-            return $"{empFirstName} {empLastName}, #{empID}\n Salary :  {empAnnualSalary}\n{empResidence.ToString()}";
+            return $"{empFirstName} {empLastName}, #{empID}\nSalary :  {empAnnualSalary}\n{empResidence.ToString()}";
         }
+
+        //Getters
         public Int32 getID(){
             return this.empID;
         }
@@ -52,5 +56,29 @@ namespace GBConsoleProject
         public String getResidence(){
             return this.empResidence.ToString();
         }
+
+        //Setters
+        public void setID(Int32 eID){
+            this.empID = eID;
+        }
+        public void setFirstName(String eFN){
+            this.empFirstName = eFN;
+        }
+        public void setLastName(String eLN){
+            this.empLastName = eLN;
+        }
+        public void setAnnualSalary(Int32 eAS){
+            this.empAnnualSalary = eAS;
+        }
+        public void setResidence(String sN, String cN, String zC, String p, String c){
+            this.empResidence.setStreetName(sN);
+            this.empResidence.setCityName(cN);
+            this.empResidence.setZipCode(zC);
+            this.empResidence.setProvince(p);
+            this.empResidence.setCountry(c);
+        }
+        
+    
+
     }
 }
