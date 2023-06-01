@@ -9,30 +9,37 @@ namespace GBConsoleProject
     class Employee
     {
 
-        private Int32 empID;
+        private static Int32 empIDCounter = 0;
+        private Int32 empID = 0;
         private String empFirstName;
         private String empLastName;
+
         private Int32 empAnnualSalary;
         private Residence empResidence;
+        
     
 
-        public Employee(Int32 eID, String eFN, String eLN, Int32 eAS, String sN, String cN, String zC, String p, String c)
+        public Employee(String eFN, String eLN, Int32 eAS, String sN, String cN, String zC, String p, String c)
         {
-            this.empID = eID;
+            this.empID = empIDCounter;
             this.empFirstName = eFN;
             this.empLastName = eLN;
             this.empAnnualSalary = eAS;
             this.empResidence = new Residence(sN, cN, zC, p, c);
+            
+            empIDCounter++;
         }
 
         //Basic Emp Constructor 
-        public Employee(Int32 eID, String eFN, String eLN, String sN, String cN, String zC, String p, String c)
+        public Employee(String eFN, String eLN, String sN, String cN, String zC, String p, String c)
         {
-            this.empID = eID;
+            this.empID = empIDCounter;
             this.empFirstName = eFN;
             this.empLastName = eLN;
             this.empAnnualSalary = 60000;
             this.empResidence = new Residence(sN, cN, zC, p, c);
+
+            empIDCounter++;
         }
 
         public override string ToString()
